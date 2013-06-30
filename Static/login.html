@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>COCAMAMA</title>
+		<meta name="description" content="BookBlock: A Content Flip Plugin" />
+		<meta name="keywords" content="jquery, plugin, css3, flip, page, 3d, booklet, book, perspective" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="/favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/custom3.css" />
+		<link rel = "stylesheet" type = "text/css" href = "/static/styles/styles.css"/>
+		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css' />
+		<script type="text/javascript" src="/static/js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 10]><link rel="stylesheet" type="text/css" href="/static/css/customIE.css" /><![endif]-->
+		<noscript><link rel="stylesheet" type="text/css" href="/static/css/noJS.css" /></noscript>
+
+		<script>
+		  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  		ga('create', 'UA-40421623-1', 'cocamama.org');
+		  		ga('send', 'pageview');
+
+			</script>
+
+	</head>
+	<body>
+			<div class="container">
+			
+<header>
+
+			<ul id = "navlist">
+				<li><a href="contact.html" alt="" title=""><div class="first">O</div>UR <div class="first">P</div>ATHS</a></li>
+				<li><a href = "philosophies.html" alt="" title=""><div class="first">P</div>HILOSOPHIES</a></li>
+				<li><a href = "index.html"><img src = "/static/images/Logo.png"/></a></li>
+				<li><a href = "more.html" alt="" title=""><div class="first">A</div>BOUT</a></li>
+				<li><a href = "http://thecocamama.org/" alt="" title=""><div class="first">B</div>LOG</a></li>
+				<li id="current"><a href = "login.html" alt="" title=""><div class="first">L</div>OGIN</a></li>
+			</ul>
+
+			<div id="headerBar"></div>
+				
+				
+			</header>
+
+
+			<section class="centertext">
+			
+								
+								<form div class="loginform" action="./" method="POST">
+									{% if name %}
+									<h3>Welcome!</h3>
+									<p>Please confirm your password so we know it's you!</p>
+									{% csrf_token %}
+									<div id="nouserknown">
+										<img src="/static/images/Email.png" style="padding-bottom:5px"> <input type="text" name="email">
+									</div>
+									{% else %}
+                                        <h3>Welcome {{ firstname }}</h3>
+                                        <p>Please confirm your password so we know it's you!</p>
+                                                                        {% csrf_token %}
+									{% endif %}
+									<img src="/static/images/Password.png" style="padding-bottom:5px"> <input type="text" name="password">
+									<input type="image" src="/static/images/Submit2.png" style="margin-top:5px" id="submitImage"/>
+								
+								</form>
+
+					
+					</section>
+			
+        		
+		<footer id="pos-footer">
+
+			<p>CopyRight CocoaMama 2013</p>
+
+			<a class="share-popup" target="_blank" href="http://twitter.com/home?status=http%3A%2F%2FCocaMama.org%2F+-+CocaMama.org" title="Share on Twitter"><img src="/static/images/G+.png" alt="" title=""></a>	
+
+			<a class="share-popup" target="_blank" href="http://twitter.com/home?status=http%3A%2F%2FCocaMama.org%2F+-+CocaMama.org" title="Share on Twitter"><img src="/static/images/Twitter.png" alt="" title=""></a>
+
+			<a class="share-popup" target="_blank" href="http://twitter.com/home?status=http%3A%2F%2FCocaMama.org%2F+-+CocaMama.org" title="Share on Twitter"><img src="/static/images/FB.png" alt="" title=""></a>
+
+			
+			
+		</footer>
+			
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquerypp.custom.js"></script>
+        <script type="text/javascript" src="js/jquery.bookblock.js"></script>
+		<script type="text/javascript">
+
+
+		</script>
+	</body>
+</html>

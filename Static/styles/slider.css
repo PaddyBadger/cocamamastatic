@@ -1,0 +1,41 @@
+/* Copyright 2013 jQuery Foundation and other contributors Licensed MIT */
+
+* {
+
+	font-family: 'Oxygen', sans-serif;
+	margin: auto;
+
+}
+
+.label {
+
+	height: 35px;
+	width: 300px;
+	
+}
+
+input {
+	border: 0; 
+	font-weight: bold;	
+	font-size: 20px;
+	
+}
+
+.slider {
+	position: absolute; 
+	top: 45px; 
+	width: 500px; 
+	height: 10px;
+	margin-left: 40px;
+}
+
+
+#inspireslider {
+
+  background: #CC0071;
+  opacity:0.7;
+  filter:alpha(opacity=70);
+
+}
+
+

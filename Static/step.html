@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <style type="text/css">
+
+    body {
+    	font-family: Helvetica, serif;
+    	font-size: 14px;
+    	width: 750px;
+    	margin: auto;
+    }
+
+   </style>
+
+  	<a href="" target="_blank" style="color: #606060;font-weight: normal;text-decoration: underline;word-wrap: break-word !important;">View this email in your browser</a>
+
+	<img alt="Cocamama Should be here! Please Turn on Images :)" src="http://gallery.mailchimp.com/ec1ffc6f37d868c6f4952a4f0/images/Cocamama_Header2.png" style="max-width: 750px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;line-height: 100%;outline: none;text-decoration: none;height: auto !important;" class="mcnImage" align="left" width="750">
+
+    <body>
+
+    <H1>{{ stepname }} </H1>
+
+
+	<H2>Welcome to {{ stepname }}</H2>
+	
+		<p>Dearest {{ firstname }}, </p>
+		
+		{% autoescape off %}<p>{{ text }} </p>{% endautoescape %}
+
+		<a href=""><img alt="Please turn on images" src="http://gallery.mailchimp.com/ec1ffc6f37d868c6f4952a4f0/images/Pause.1.png" title='Pause me Please!' style="margin: 10px;max-width: 100px;border: 0;line-height: 100%;outline: none;text-decoration: none;vertical-align: bottom;height: auto !important;"></a>
+
+        <a href=""><img alt="Please turn on images" src="http://gallery.mailchimp.com/ec1ffc6f37d868c6f4952a4f0/images/Play.1.png" title='Accept Step!' style="margin: 10px;max-width: 100px;border: 0;line-height: 100%;outline: none;text-decoration: none;vertical-align: bottom;height: auto !important;"></a>
+
+        <a href=""><img alt="Please turn on images" src="http://gallery.mailchimp.com/ec1ffc6f37d868c6f4952a4f0/images/Skip.1.png" title='Next Step Please!' style="margin: 10px;max-width: 100px;border: 0;line-height: 100%;outline: none;text-decoration: none;vertical-align: bottom;height: auto !important;"></a>
+
+        <a href=""><img alt="Please turn on Images" src="https://lh4.googleusercontent.com/-lw5K0UijVtQ/UbI_6EBSrfI/AAAAAAAAAgM/09BZxs_vSVE/w431-h82-no/Feedback.jpg" title="Send us some feedback" style="margin: 10px;max-width: 350px;border: 0;line-height: 100%;outline: none;text-decoration: none;vertical-align: top;"></a>
+
+
+          <img src="{{ image }}" style="margin: 15px;float: left;max-width: 350px;outline: none;text-decoration: none;vertical-align: top;" />
+
+          <p style="float: left;margin: 5px;max-width: 350px;border: 0;line-height: 100%;outline: none;text-decoration: none;vertical-align: top;padding-bottom:30px">{{ description }}</p>	
+
+      		
+
+		<p style="width: 100px;margin:10px">Ta Ta For Now!</p>
+
+		<p style="width: 100px;margin:10px">Cocamama</p>
+
+{% if sendemail %}
+<br /><br /><br /><a href='./send/'>Send email</a>
+{% endif %}
+
+</body>
+</html>

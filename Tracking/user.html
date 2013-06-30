@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>COCAMAMA</title>
+		<meta name="description" content="BookBlock: A Content Flip Plugin" />
+		<meta name="keywords" content="" />
+		<link rel="shortcut icon" href="/favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/custom3.css" />
+		<link rel = "stylesheet" type = "text/css" href = "/static/styles/styles.css"/>
+		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css' />
+		<script type="text/javascript" src="/static/js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 10]><link rel="stylesheet" type="text/css" href="/static/css/customIE.css" /><![endif]-->
+		<noscript><link rel="stylesheet" type="text/css" href="/static/css/noJS.css" /></noscript>
+
+		<script>
+		  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  		ga('create', 'UA-40421623-1', 'cocamama.org');
+		  		ga('send', 'pageview');
+
+			</script>
+
+	</head>
+	<body>
+			<div class="container">
+			
+<header>
+
+			<ul id = "navlist">
+				<li><a href="contact.html" alt="" title=""><div class="first">O</div>UR <div class="first">P</div>ATHS</a></li>
+				<li><a href = "philosophies.html" alt="" title=""><div class="first">P</div>HILOSOPHIES</a></li>
+				<li><a href = "index.html"><img src = "/static/images/Logo.png"/></a></li>
+				<li><a href = "more.html" alt="" title=""><div class="first">A</div>BOUT</a></li>
+				<li><a href = "http://thecocamama.org/" alt="" title=""><div class="first">B</div>LOG</a></li>
+				<li><a href = "login.html" alt="" title=""><div class="first">L</div>OGIN</a></li>
+			</ul>
+
+			<div id="headerBar"></div>
+				
+				
+			</header>
+
+		<section id="main">
+
+			<h3>Welcome {{firstname}},</h3>
+
+
+		<div class="maintext">
+
+			
+
+			<p>This is your Cocamama dashboard, where you can find you latest information from Cocamama, interact with Cocamama, record your progress and see your charting over time. </p>
+
+			<p>Please feel free to contact us, give feedback and send us messages through this page.</p>
+
+			<p>Ta ta for now!</p>
+
+
+		</div>
+
+		</section>
+
+		 <div class="books">
+
+		 	<img src="/static/images/Books1.png">
+			<ul id="top">
+				<li><a title="content_2" class="tab">CHOOSE MORE PATHS</a></li>
+			</ul>
+		</div>
+		<div class="tabs">
+			<ul id="bottom">
+				<li><a title="content_1" class="tab active">MESSAGES</a></li>
+				<li><a title="content_3" class="tab">YOUR PROGRESS</a></li>
+			</ul>
+		</div>
+
+
+
+
+	<section id="content_1" class="content" style="display: block;">
+	
+		<div id="headerBar"></div>
+
+		<div class="entry">
+		
+			
+				<h3>Send us a message:</h3>
+				<p>
+				<textarea style="height:100px;width:700px;"></textarea>
+				</p>
+
+				<img style="margin-bottom:10px;" src="/static/images/Submit2.png"/>
+			
+		</div>
+		{% for email in emailhistory %}			
+			<div id="headerBar"></div>
+
+		<div class="entry">
+			<ul class="details">
+				<li>{{email.date}}</li>
+				<li>{{email.origin}}</li>
+				<li>{{email.email}}</li>
+			</ul>
+			
+			<p class="entrytitle">{{email.name}}</p>
+			<p class="entrytext">{% autoescape off %}{{email.text}}{% endautoescape %}</p>
+			<p class="entrytext">{% autoescape off %}{{email.description}}{% endautoescape %}</p>
+			
+			<div class="buttons">
+			
+
+			<ul>	
+				{% if email.action == 0 %}
+				<li class="hold choice" >Please Choose Your Option</li>
+				<li class="hold">Step Paused</li>
+				{% endif %}
+				{% if email.action == 1 %}
+				<li class="hold">Step Accepted</li>
+				{% endif %}
+				{% if email.action == 2 %}
+				<li class="hold">Step Skipped</li>
+				{% endif %}
+
+				</ul>
+			{% if email.action == 0 %}
+		<!--
+		<a href="http://dev.cocamama.org/tracking/pausestep/?path={{email.pathid}}&email={{email.email}}&stepid={{email.stepid}}">
+		-->
+
+		<img id="0" class="option" alt="Please turn on images" src="http://gallery.mailchimp.com/ec1ffc6f37d868c6f4952a4f0/images/Pause.1.png" title='Pause me Please!' />
+
+		<!--
+		</a> <a href="http://dev.cocamama.org/tracking/followstep/?path={{email.pathid}}&email={{email.email}}&stepid={{email.stepid}}">
+
+	-->
+        	
+        	<img id="1" class="option" alt="Please turn on images" src="http://gallery.mailchimp.com/ec1ffc6f37d868c6f4952a4f0/images/Play.1.png" title='Accept Step!'/>
+			
+		
+		<!--
+		</a><a href="http://dev.cocamama.org/tracking/nextstep/?path={{email.pathid}}&email={{email.email}}&stepid={{email.stepid}}">
+	-->
+        	
+        	<img id="2" class="option" alt="Please turn on images" src="http://gallery.mailchimp.com/ec1ffc6f37d868c6f4952a4f0/images/Skip.1.png" title='Next Step Please!'/>
+			
+		<!--	</a> -->
+			{% endif %}
+     	    </div>
+
+		</div>
+		{% endfor %}
+		
+		</section>
+			
+
+		<section id="content_2" class="content" style="display: none;">
+	
+		<div id="headerBar"></div>
+
+		<div class="entry">
+				<h3>AVAILABLE PATHS!</h3>
+			
+				<a href=""><img src="/static/images/Eeuser.png"></a>
+
+		</section>
+
+		<section id="content_3" class="content" style="display: none;">
+	
+		<div id="headerBar"></div>
+
+		<div class="entry">
+				<h3>COMING SOON!</h3>
+			
+				<img src="/static/images/Feet.png">
+
+				
+			
+		</div>
+			
+
+		</section>
+		<footer id="pos-footer">
+
+			<p>CopyRight CocoaMama 2013</p>
+
+			<a class="share-popup" target="_blank" href="http://twitter.com/home?status=http%3A%2F%2FCocaMama.org%2F+-+CocaMama.org" title="Share on Twitter"><img src="/static/images/G+.png" alt="" title=""></a>	
+
+			<a class="share-popup" target="_blank" href="http://twitter.com/home?status=http%3A%2F%2FCocaMama.org%2F+-+CocaMama.org" title="Share on Twitter"><img src="/static/images/Twitter.png" alt="" title=""></a>
+
+			<a class="share-popup" target="_blank" href="http://twitter.com/home?status=http%3A%2F%2FCocaMama.org%2F+-+CocaMama.org" title="Share on Twitter"><img src="/static/images/FB.png" alt="" title=""></a>
+
+			
+			
+		</footer>
+			
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquerypp.custom.js"></script>
+        <script type="text/javascript" src="/static/js/jquery.bookblock.js"></script>
+		<script type="text/javascript">
+			
+// jQuery for user page navigation ...  
+  $(document).ready(function(){  
+      
+    // When a link is clicked  
+    $("a.tab").click(function () {  
+          
+        // switch all tabs off  
+        $(".active").removeClass("active");  
+          
+        // switch this tab on  
+        $(this).addClass("active");  
+          
+        // slide all elements with the class 'content' up  
+        $(".content").hide();  
+          
+        // Now figure out what the 'title' attribute value is and find the element with that id.  Then slide that down.  
+        var content_show = $(this).attr("title");  
+        $("#"+content_show).show();  
+        
+    });  
+  
+  });  
+
+
+// jQuery for buttons reflecting choices ... 
+  $(document).ready(function(){
+
+  $("img.option").click(function () {
+
+   	$(".chosen").removeClass("chosen");
+
+   	$(this).addClass("chosen");
+
+
+   });
+// jQuery for choices {{status}} ... 
+  $("#0").click(function (e) {
+  	//$(".e li:nth-child(1)").addClass("choice");
+  	$(".choice").removeClass("choice");
+  	$("li.hold:eq(1)").addClass("choice");
+   	e.PreventDefault();
+  	console.log('Status 0');
+  	});
+  	
+  $("#1").click(function (e) {
+
+  	$(".choice").removeClass("choice");
+   	$("li.hold:eq(2)").addClass("choice");
+   	$("#0,#2").hide();
+   	$("#1").show();
+   	e.PreventDefault();
+
+  	console.log('Status 1');
+  });
+
+  $("#2").click(function (e) {
+  	$(".choice").removeClass("choice");
+   	$("li.hold:eq(3)").addClass("choice");
+   	$("#0,#1").hide();
+   	$("#2").show();
+  		e.PreventDefault();
+  	console.log('Status 2');
+  });
+
+  });
+		</script>
+	</body>
+</html>
